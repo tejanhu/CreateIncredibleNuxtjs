@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello World App</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+    <div id="el">
+        <h1>
+            {{ val? data: otherData }}
+         </h1>
+    </div>
+
+   <script>
+   new Vue({
+    //    selector attached to html tag
+       el: '#el',
+       data(){
+           return {
+               hello: 'Hello World',
+               data: 'Some kind of data',
+               otherData: 'Other data',
+               val: false
+           }
+       }, 
+       beforeCreate(){
+           console.log('before Create');
+       },
+       created(){
+           console.log('created');
+       },
+       beforeMount(){
+           console.log('before Mount');
+       },
+       mounted(){
+           console.log('mounted');
+       }
+   });
+   </script> 
+</body>
+</html>
