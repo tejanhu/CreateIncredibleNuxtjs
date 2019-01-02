@@ -17,11 +17,11 @@
          {{incrementer}}
          <br/>
          <form>
-            <button @click.prevent="onClick()">
+            <button @click.stop.prevent="onClick()">
                 Press Me
             </button>
         </form>
-         <input type="text" @keyup.ctrl.enter.exact="incrementer++"/>
+         <input type="text" @keyup.CMD.enter.exact="incrementer++"/>
     </div>
 
    <script>
