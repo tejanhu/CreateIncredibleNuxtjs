@@ -17,7 +17,7 @@
          {{incrementer}}
          <br/>
          <form>
-            <button @click="onClick($event)">
+            <button @click.prevent="onClick()">
                 Press Me
             </button>
         </form>
@@ -41,8 +41,7 @@
            checker(){
                return this.val ? this.data: this.otherData
            },
-           onClick(event){
-               event.preventDefault();
+           onClick(){
                this.incrementer++;
            }
        }
