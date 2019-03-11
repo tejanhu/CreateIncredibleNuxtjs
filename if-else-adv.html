@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello World App</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+    <div id="el">
+        <button @click="value=1">Select French </button>
+        <button @click="value=2">Select Arabic</button>
+        <button @click="value=3">Select Portuguese</button>
+        <button @click="value=0">Select English</button>
+
+        <h1 v-if="value == value">
+            Français
+        </h1>
+        <h1 v-else-if="value == 2">
+             عربى
+        </h1>
+        <h1 v-else-if="value == 3">
+            Português
+        </h1>
+        <h1 v-else>
+            English
+        </h1>
+
+        <div v-if="value == 1">
+            <label for="">Username:</label>
+            <input placeholder="Enter Username" key="user-input">
+        </div>
+
+        <div v-else>
+            <label for="">Address:</label>
+            <input placeholder="Enter Address" key="address-input">
+        </div>
+
+        
+    </div>
+   
+
+   <script>
+   new Vue({
+    //    selector attached to html tag
+       el: '#el',
+       data(){
+           return {
+               value: 0
+           }
+       }  
+       
+   });
+   </script> 
+</body>
+</html>
